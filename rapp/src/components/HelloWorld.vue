@@ -7,6 +7,8 @@
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
     <h3>Installed CLI Plugins</h3>
+    <img src="../assets/logo.png" width="25" alt=""/>
+    <img :src="GetSoftIcon" width="25" alt="" />
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
@@ -33,9 +35,19 @@
 <script>
 export default {
   name: 'HelloWorld',
+  data(){
+    return{
+      ic: "logo.png"
+    }
+  },
   props: {
     msg: String
-  }
+  },
+  computed: {
+      GetSoftIcon() {
+              return require(`@/assets/${this.ic}`)
+        }
+    }
 }
 </script>
 
